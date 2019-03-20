@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Home from './containers/Home'
+import { BrowserRouter, Switch } from 'react-router-dom';
+import { renderRoutes } from './utils/router';
+import routes from './routes';
+
 class App extends Component {
     render() {
         return (
-            <Switch>
-                <Route exact path="/" component={Home} />
-            </Switch>
+            <BrowserRouter>
+                <Switch>
+                    { renderRoutes(routes) }
+                </Switch>
+            </BrowserRouter>
         )
     }
 }
