@@ -1,0 +1,122 @@
+//----------------------------------------
+//   Variables
+//----------------------------------------
+
+//
+// 1 - Color
+// ---------------------------------------
+
+$light: #fff;
+$success: #61bcbd;
+$warning: #f9b134;
+$notice: #d9edf7;
+$error: #d24a53;
+$divider: #dadada;
+
+$border-grey: #dcdcdc;
+
+$slide-bg: #f1f1f1;
+$slide-desc: #6c3c33;
+
+$black: #050505;
+$darker: #23292e;
+$dark: #212121;
+$dark2: #333;
+$light: #a9a8a8;
+$lighter: #fafafa;
+
+$primary: #789629;
+$primary-light: tint($primary, 20%);
+
+$primary-lighter: tint($primary, 85%);
+$primary-dark: shade($primary, 15%);
+$primary-darker: shade($primary, 30%);
+
+
+$jewelry: #88d8da;
+$gel: #e3ce33;
+$black: #000000;
+$perfume: #cbd3df;
+$grey: #c1c1c1;
+$white: #ffff;
+$red: #ee3030;
+
+//
+// 2 - Font
+// ---------------------------------------
+
+$font-base: 'Open Sans', sans-serif;
+$font-size-base: 1.6rem;
+
+$font-special-1: 'Lobster', cursive;
+$font-special-2: 'UTM ViceroyJF';
+
+// Don't touch this, it's for em convertion
+$em-base: strip-units($font-size-base) * 10;
+$font-weight-bold: bold;
+$font-weight-base: 400;
+$font-weight-thin: 100;
+$font-size-XXL: 4rem;
+$font-size-XL: 2.8rem;
+$font-size-L: 2rem;
+$font-size-M: 1.6rem;
+$font-size-S: 1.4rem;
+$font-size-XS: 1.2rem;
+$font-size-XXS: 1rem;
+$line-height-XL: 1.8;
+$line-height-L: 1.625;
+$line-height-M: 1.5;
+$line-height-S: 1.25;
+$line-height-XS: 1;
+
+$fz-feature: 28px;
+$fz-standard: 15px;
+$fz-medium: 18px;
+$fz-large: 30px;
+$fz-small: 12px;
+//
+// 3 - Grid and wrapper
+// ---------------------------------------
+
+$app-min-width: 30rem;
+$wrap-M-max-width: 100rem;
+$wrap-S-max-width: 60rem;
+$gutter-width: 2rem;
+
+$width-list: (20 20%) (25 25%) (33 33.333%) (40 40%) (50 50%) (60 60%)
+  (66 66.666%) (75 75%) (80 80%) (100 100%);
+
+//
+// 4 - Radius
+// ---------------------------------------
+
+$rad-S: 0.3rem;
+$rad-M: 1rem;
+
+//
+// 5 - Forms
+// ---------------------------------------
+
+$form-group-input-height: 4rem;
+
+$form-list-input: _assign(
+  (
+    '[type="text"]',
+    '[type="password"]',
+    '[type="tel"]',
+    '[type="url"]',
+    '[type="email"]',
+    '[type="search"]',
+    '[type="date"]',
+    '[type="month"]',
+    '[type="number"]'
+  )
+);
+
+//
+// 9 - Transitions
+// ---------------------------------------
+
+$trans-timing: 0.3s;
+$trans-cubic: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$trans-all: all $trans-timing $trans-cubic;
