@@ -3,21 +3,24 @@ import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import './ProductItem.scss';
 
-const ProductItem = ({ id, name, image, price_o, price_n }) => {
+const ProductItem = (product) => {
   return (
-    <div class="product-item">
-      <div class="product-item-img"><img src={image} /></div>
-      <div class="product-item__branch">{branch}</div>
-      <Link class="product-item__name" to={`/detail/${id}`}>{name}</Link>
-      <hr class="hr-name" />
-      <div class="product-item__price">
-        <span class="product-item__price--new" data-end="đ">{price_n}</span>
-        <span class="product-item__price--old" data-end="đ">{price_o}</span>
-      </div>
-      <div class="product-item__action">
-        <Link class="product-item__action--buy" to={`/cart/${id}`}>Mua hàng</Link>
-        <div class="product-item__action--heart"><i class="heart-icon"></i></div>
-        <div class="product-item__action--reload"><i class="reload-icon"></i></div>
+    <div className={cn("product-item")}>
+      <div className={cn("product-item-img")}><img src={product.image} /></div>
+      <div className={cn("product-item__branch")}>{product.branch}</div>
+      <Link className={cn("product-item__name")} to={`/detail/${product.id}`}>{name}</Link>
+      <hr className={cn("hr-name")} />
+      <div className={cn("product-item__price")}>
+        <span className={cn("product-item__price--new")} data-end="đ">{product.price_n}</span>
+        <span className={cn("product-item__price--old")} data-end="đ">{product.price_o}</span></div>
+      <div className={cn("product-item__action")}>
+        <Link className={cn("product-item__action--buy")} to={`detail/${product.id}`}>Mua hàng</Link>
+        <div className={cn("product-item__action--heart")}>
+          <i className={cn("heart-icon")}></i>
+        </div>
+        <div className={cn("product-item__action--reload")}>
+          <i className={cn("reload-icon")}></i>
+        </div>
       </div>
     </div>
   )

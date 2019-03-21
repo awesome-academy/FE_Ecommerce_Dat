@@ -5,6 +5,7 @@ import Footer from '../../containers/Footer';
 import Feature from '../../modules/Feature';
 import Feedback from '../../modules/Feedback/Feedback';
 import Social from '../../modules/Social';
+import Products from '../../modules/Products';
 
 class Home extends React.PureComponent {
 
@@ -20,6 +21,7 @@ class Home extends React.PureComponent {
         <Promotion />
         <Feature />
         <Feedback />
+        <Products />
         <Social />
         <Footer />
       </>
