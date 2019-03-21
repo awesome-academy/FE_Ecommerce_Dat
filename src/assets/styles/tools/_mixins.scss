@@ -47,7 +47,7 @@
 }
 
 @mixin social-icon($name) {
-    background: url('../images/#{$name}.png') no-repeat;
+    background: url('../../assets/images/#{$name}.png') no-repeat;
     height: 10px;
     width: 10px;
     display: block;
@@ -63,7 +63,7 @@
     height: 10px;
     width: 50px;
     margin: 0 10px;
-    background: url(../images/#{$bg}.png) no-repeat;
+    background: url('../../images/#{$bg}.png') no-repeat;
 }
 
 @mixin title-line($color) {
