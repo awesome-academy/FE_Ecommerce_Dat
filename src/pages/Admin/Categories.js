@@ -8,6 +8,7 @@ import AdminNavigator from '../../containers/Admin/AdminNavigator';
 import CategoriesContainer from '../../containers/Admin/Categories';
 import { withAuthorization } from '../../session';
 import * as ROLES from '../../constants/role';
+import isEmpty from '../../validation/is-empty';
 
 class Categories extends React.Component {
   render() {
@@ -27,5 +28,5 @@ class Categories extends React.Component {
   }
 }
 
-const condition = authUser => authUser && authUser.roles.includes(ROLES.ADMIN);
+const condition = authUser => !isEmpty(authUser) && authUser.roles.includes(ROLES.ADMIN);
 export default compose(withAuthorization(condition))(Categories);

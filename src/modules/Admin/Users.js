@@ -114,7 +114,6 @@ class Users extends React.Component {
   }
 
   render() {
-    console.log(this.state.data)
     return (
       <div className={cn('management')}>
         <div className={cn('management-box user-management #user-management')}>

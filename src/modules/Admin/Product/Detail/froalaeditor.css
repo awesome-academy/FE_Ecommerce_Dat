@@ -1,0 +1,4 @@
+.fr-box.fr-basic .fr-element {
+    min-height: 150px !important;
+    max-height: 40vh;
+}

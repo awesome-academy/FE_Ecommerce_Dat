@@ -5,7 +5,7 @@ import cn from 'classnames';
 import './HeaderUser.scss';
 import { logoutUser } from './../../actions/authActions';
 import * as routes from '../../constants/routes';
-
+import * as ROLES from '../../constants/role';
 
 class HeaderUser extends React.Component {
   constructor(props) {
@@ -29,9 +29,11 @@ class HeaderUser extends React.Component {
         <li className={cn('header-user__customer-link')}>
           <Link to='/individual/products'><span className={cn('header-user__text')}>Sản phẩm đã xem</span></Link>
         </li>
-        <li className={cn('header-user__customer-link')}>
-          <Link to={routes.USERS}><span className={cn('header-user__text')}>Admin</span></Link>
-        </li>
+        {this.props.auth.user && this.props.auth.user.roles.includes(ROLES.ADMIN) && (
+          <li className={cn('header-user__customer-link')}>
+            <Link to={routes.USERS}><span className={cn('header-user__text')}>Quản lý</span></Link>
+          </li>
+        )}
         <li className={cn('header-user__customer-link')}>
           <div className={cn('btn')} onClick={() => { this.handleLogoutUser() }}><span className={cn('header-user__text')}>Thoát</span></div>
         </li>
