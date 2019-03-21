@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../modules/Header';
+import Promotion from '../../modules/Promotion';
 import Footer from '../../containers/Footer';
 
 class Home extends React.PureComponent {
@@ -13,6 +14,7 @@ class Home extends React.PureComponent {
     return (
       <>
         <Header />
+        <Promotion />
         <Footer />
       </>
     );
