@@ -2,6 +2,10 @@ import React from 'react';
 import Header from '../../modules/Header';
 import Promotion from '../../modules/Promotion';
 import Footer from '../../containers/Footer';
+import Feature from '../../modules/Feature';
+import Feedback from '../../modules/Feedback/Feedback';
+import Social from '../../modules/Social';
+import Others from '../../modules/Others';
 
 class Home extends React.PureComponent {
 
@@ -15,6 +19,10 @@ class Home extends React.PureComponent {
       <>
         <Header />
         <Promotion />
+        <Feature />
+        <Feedback />
+        <Social />
+        <Others />
         <Footer />
       </>
     );
