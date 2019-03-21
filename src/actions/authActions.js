@@ -1,4 +1,4 @@
-import { GET_ERRORS, SET_CURRENT_USER, LOGINING, REGISTERING } from './../constants/ActionTypes';
+import { GET_ERRORS, SET_CURRENT_USER, LOGINING, REGISTERING, GET_CART } from './../constants/ActionTypes';
 import { auth, db } from '../firebase'
 
 export const loginUser = (email, password) => dispatch => {
@@ -34,6 +34,10 @@ export const setCurrentUser = decoded => {
 export const logoutUser = () => dispatch => {
   auth.doSignOut().then(function () {
     dispatch(setCurrentUser({}));
+    dispatch({
+      type: GET_CART,
+      payload: {}
+    })
   }).catch(function (error) {
   });
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import onClickOutside from 'react-onclickoutside';
 import cn from 'classnames';
 import './Menu.scss';
 
@@ -9,6 +10,10 @@ class Menu extends React.Component {
     this.state = {
       menuActive: false
     }
+  }
+
+  handleClickOutside = () => {
+    this.setState({ menuActive: false });
   }
 
   handleMenuActive = () => {
@@ -37,4 +42,4 @@ class Menu extends React.Component {
   }
 }
 
-export default Menu;
+export default onClickOutside(Menu);

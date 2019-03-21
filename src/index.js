@@ -35,6 +35,24 @@ auth.onAuthStateChanged(authUser => {
           ...dbUser,
         };
         store.dispatch(setCurrentUser(authUser));
+        if (cart) {
+          db.saveToCart(authUser.uid, cart).then(error => {
+            if (!error) {
+              store.dispatch({
+                type: GET_CART,
+                payload: cart
+              })
+              DatabaseModule.remove("cart");
+            }
+          })
+        } else {
+          db.getCart(authUser.uid).then(snapshot => {
+            store.dispatch({
+              type: GET_CART,
+              payload: snapshot.val()
+            })
+          })
+        }
       }
     });
   }

@@ -4,6 +4,7 @@ import * as categoryActions from './categoryActions';
 import * as productActions from './productActions';
 import * as uploadFileActions from './uploadFileActions';
 import * as cartActions from './cartActions';
+import * as orderActions from './orderActions';
 
 export default {
   authActions,
@@ -11,5 +12,6 @@ export default {
   categoryActions,
   productActions,
   uploadFileActions,
-  cartActions
+  cartActions,
+  orderActions
 }

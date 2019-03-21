@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
+import onClickOutside from 'react-onclickoutside';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import './Cart.scss';
@@ -14,8 +15,12 @@ class Cart extends React.Component {
     }
   }
 
+  handleClickOutside = () => {
+    this.setState({ showCart: false });
+  }
+
   renderCart = () => {
-    if (!isEmpty(this.props.products)) {
+    if (!isEmpty(this.props.products) && this.props.cart) {
       return _.map(this.props.cart, (quantity, key) => {
         let productInfo = this.props.products[key];
         let { name, price_n, images } = productInfo;
@@ -65,4 +70,4 @@ class Cart extends React.Component {
   }
 }
 
-export default Cart;
+export default onClickOutside(Cart);

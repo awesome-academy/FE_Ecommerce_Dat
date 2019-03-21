@@ -14,6 +14,10 @@ const override = css`
 
 class Detail extends React.Component {
   componentDidMount() {
+    this.fetchDetail()
+  }
+
+  fetchDetail = () => {
     if (isEmpty(this.props.products)) {
       this.props.productActions.fetchAllProducts();
     }
@@ -21,28 +25,24 @@ class Detail extends React.Component {
 
   render() {
     const { products, loading, match, cartActions } = this.props;
-    if (isEmpty(products)) return null;
+    if (isEmpty(products)) return <CommonLoading
+      style={override}
+      unit="px"
+      size={30}
+      color="#789629"
+    />;
     return (
       <>
-        {
-          loading.fetchingProducts && isEmpty(products) ?
-            <CommonLoading
-              style={override}
-              unit="px"
-              size={30}
-              color="#789629"
-            /> :
-            <>
-              <Header />
-              <div className="container">
-                <DetailModule
-                  product={products[match.params.id]}
-                  addToCart={cartActions.addToCart}
-                />
-              </div>
-              <Footer />
-            </>
-        }
+        <Header />
+        <div className="container">
+          <DetailModule
+            product={products[match.params.id]}
+            id={match.params.id}
+            addToCart={cartActions.addToCart}
+            fetchDetail={this.fetchDetail}
+          />
+        </div>
+        <Footer />
       </>
     )
   }

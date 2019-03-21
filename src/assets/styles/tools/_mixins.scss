@@ -105,3 +105,9 @@
     display: block;
     clear: both;
 }
+
+@mixin data-end {
+  content: attr(data-end);
+  font-size: smaller;
+  vertical-align: super;
+}

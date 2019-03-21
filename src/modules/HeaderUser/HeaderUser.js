@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import onClickOutside from 'react-onclickoutside';
 import { connect } from 'react-redux';
 import cn from 'classnames';
 import './HeaderUser.scss';
@@ -14,6 +15,11 @@ class HeaderUser extends React.Component {
       showChoiceBox: false
     }
   }
+
+  handleClickOutside = () => {
+    this.setState({ showChoiceBox: false });
+  }
+
   handleLogoutUser = () => {
     this.props.logoutUser();
   }
@@ -75,4 +81,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { logoutUser })(HeaderUser);
+export default connect(mapStateToProps, { logoutUser })(onClickOutside(HeaderUser));

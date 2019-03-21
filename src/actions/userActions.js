@@ -9,7 +9,6 @@ export const getAllUsers = () => dispatch => {
       payload: snapshot.val()
     });
   }, (error) => {
-    console.log(error);
   });
 }
 
@@ -20,7 +19,6 @@ export const updateUser = (data) => dispatch => {
       payload: data
     });
   }, (error) => {
-    console.log('updating failed: ', error);
   });
 }
 
@@ -31,6 +29,5 @@ export const deleteUser = (id) => dispatch => {
       payload: id
     });
   }, (error) => {
-    console.log('updating failed: ', error);
   });
 }

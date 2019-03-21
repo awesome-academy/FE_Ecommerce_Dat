@@ -69,6 +69,50 @@ hr.line-across {
     border-top: 1px solid $divider;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.form-check-inline {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.form-check-input {
+  margin-right: .5rem;
+}
+
+.form-group {
+  margin-bottom: .75rem;
+  label {
+      margin-right: 1rem;
+  }
+}
+
+.panel {
+  background-color: $white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px $divider;
+  margin-bottom: 20px;
+}
+
+.panel-body {
+  font-size: $fz-small;
+  text-transform: none;
+  font-weight: normal;
+  padding: 10px 15px;
+}
+
+.panel-default {
+  border-color: rgba($light, .1);
+}
+
+.text-right {
+  float: right;
+}
+
 .row {
     &::after {
         content: '';

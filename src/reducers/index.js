@@ -6,6 +6,7 @@ import userReducer from './userReducer';
 import categoryReducer from './categoryReducer';
 import productReducer from './productReducer';
 import cartReducer from './cartReducer';
+import orderReducer from './orderReducer';
 import { reducer as toastrReducer } from 'react-redux-toastr';
 
 const rootReducers = combineReducers({
@@ -16,6 +17,7 @@ const rootReducers = combineReducers({
   categories: categoryReducer,
   products: productReducer,
   toastr: toastrReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  order: orderReducer
 })
 export default rootReducers;
