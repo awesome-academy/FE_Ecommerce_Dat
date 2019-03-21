@@ -1,0 +1,22 @@
+@import '../../assets/styles/main.scss';
+
+.header-search {
+    padding-right: 25px;
+    .search-icon {
+        padding: 5px 10px 5px 32px;
+        background: url('../../assets/images/search_icon.png') no-repeat 9px center;
+        @include icon;
+    }
+    input[type='search'] {
+        cursor: pointer;
+        border: none;
+        transition: all .5s;
+        &:focus {
+            width: 140px;
+            padding-left: 32px;
+            color: $black;
+            background-color: $light;
+            cursor: auto;
+        }
+    }
+}

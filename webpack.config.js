@@ -76,8 +76,10 @@ module.exports = {
 		})
 	],
 	devServer: {
+		historyApiFallback: true,
 		contentBase: "dist",
-		hot: true
+		hot: true,
+		port: 9000
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
