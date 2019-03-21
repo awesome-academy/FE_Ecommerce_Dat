@@ -42,11 +42,13 @@
 .btn {
     border: none;
     cursor: pointer;
+    padding: 5px 15px;
+    margin: 0 .7rem;
 }
 
 .btn-primary {
     display: block;
-    background: $black;
+    background: $primary;
     color: $lighter;
     padding: 5px 15px;
     text-transform: uppercase;
@@ -54,8 +56,6 @@
         background: lighten($black, 20);
     }
 }
-
-
 
 .container-title {
     padding: 10px 0;

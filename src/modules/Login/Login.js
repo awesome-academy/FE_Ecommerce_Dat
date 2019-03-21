@@ -19,7 +19,7 @@ class Login extends React.Component {
 
   componentDidMount() {
     if (this.props.auth && this.props.auth.isAuthenticated) {
-      console.log(this.props.auth)
+      console.log('cmd this.props.auth: ', this.props.auth);
       this.props.history.push('/')
     }
   }
@@ -43,7 +43,6 @@ class Login extends React.Component {
   render() {
     const { errors } = this.props;
     const { logining } = this.props;
-
     return (
       <div className="login">
         <div className="container">
