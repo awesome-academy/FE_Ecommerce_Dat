@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 import Home from './../../pages/Home'
 
 const mapStateToProps = (state) => {
-    return {
-    };
+  return {
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-    };
+  return {
+  };
 };
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Home);

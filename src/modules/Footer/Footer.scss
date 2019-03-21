@@ -1,0 +1,121 @@
+@import '../../assets/styles/main.scss';
+@mixin size-icon {
+    height: 16px;
+    width: 18px;
+}
+
+.maker-icon {
+    background: url('../../assets/images/maker_icon.png') no-repeat;
+    @include size-icon;
+}
+
+.phone-icon {
+    background: url('../../assets/images/phone_icon.png') no-repeat;
+    @include size-icon;
+}
+
+.fax-icon {
+    background: url('../../assets/images/fax_icon.png') no-repeat;
+    @include size-icon;
+}
+
+.mail-icon {
+    background: url('../../assets/images/mail_icon.png') no-repeat;
+    @include size-icon;
+}
+
+.footer {
+    background: $black;
+    padding-top: 30px;
+    .icon {
+        margin-right: 10px;
+    }
+    span {
+        color: $dark2;
+        font-size: ($fz-standard)-1;
+    }
+    .about .content-container {
+        @include breakpoint(tablets-ipads-p) {
+            width: 50%;
+        }
+    }
+    &::after {
+        @include clearfix();
+    }
+}
+
+.footer-nav {
+    @include breakpoint(laptops-desktops) {
+        border-bottom: 1px solid $dark;
+    }
+}
+
+.footer {
+    .about,
+    .delivery,
+    .support,
+    .information,
+    .myaccount {
+        border-bottom: 1px solid $dark;
+        padding-top: 30px;
+        @include breakpoint(laptops-desktops) {
+            border: none;
+        }
+        ul {
+            list-style: none;
+            li {
+                a {
+                    color: $dark2;
+                    text-decoration: none;
+                    font-size: ($fz-standard)-1;
+                    &:hover {
+                        color: $primary-light;
+                    }
+                }
+                &:hover {
+                    list-style-type: square;
+                    list-style-position: inside;
+                    color: $primary-light;
+                    >a {
+                        margin-left: -10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.maker,
+.phone-fax,
+.phone-mail,
+.phone,
+.mail,
+.fax {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.fax,
+.mail {
+    margin-left: 10px;
+}
+
+.title-f {
+    @include title-f;
+}
+
+.copyright {
+    .row {
+        display: flex;
+        justify-content: space-between
+    }
+    padding: 20px 30px;
+    p {
+        font-size: $fz-standard;
+        margin-bottom: 8px;
+    }
+    img {
+        align-self: center;
+    }
+}
