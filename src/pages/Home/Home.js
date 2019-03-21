@@ -1,7 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import cn from 'classnames';
-import styles from './Home.scss';
 import Header from '../../modules/Header';
 import Footer from '../../containers/Footer';
 
