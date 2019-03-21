@@ -1,0 +1,114 @@
+@import '../../assets/styles/main.scss';
+
+.feature {
+  padding-bottom: 50px;
+  @include breakpoint(tablets-ipads-p) {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  @include breakpoint(laptops-desktops) {
+      display: flex;
+      flex-wrap: wrap;
+  }
+}
+
+.player--round {
+  position: absolute;
+  background: darken($light, 20);
+  padding: 30px;
+  border-radius: 50%;
+  margin: auto;
+  height: 97px;
+  width: 97px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: all .5s;
+  &:hover {
+      background: lighten($color: $light, $amount: 10)
+  }
+}
+
+.player-icon {
+  background: url('../../assets/images/player_icon.png') no-repeat;
+  height: 37px;
+  width: 24px;
+  display: inline-block;
+}
+.bg-yellow {
+  background: $gel;
+}
+
+.bg-grey {
+  background: $light;
+}
+
+.bg-ligt-blue {
+  background: $jewelry;
+}
+
+.box-gel {
+  @include box;
+  .name {
+      text-transform: uppercase;
+      color: $lighter;
+      font-size: $fz-feature;
+      font-family: 'RobotoSlab Light';
+  }
+  &:before {
+      @include arrow('left', 'right', $gel);
+  }
+}
+
+.box-perfume {
+  @include box;
+  .name {
+      color: $black;
+      text-transform: uppercase;
+      font-size: $fz-feature;
+      font-family: 'RobotoSlab Light';
+  }
+  &:before {
+      @include arrow('right', 'left', $perfume);
+  }
+}
+
+.box-jewelry {
+  @include box;
+  .name {
+      color: $dark;
+      text-transform: uppercase;
+      font-size: $fz-feature;
+      font-family: 'RobotoSlab Light';
+  }
+  &:before {
+      @include arrow('right', 'left', $jewelry);
+  }
+}
+
+.title-line-bl {
+  @include title-line($black);
+}
+
+.title-line-w {
+  @include title-line($light);
+}
+
+.more-slash-w {
+  @include more-slash('slash_white');
+}
+
+.more-slash-bl {
+  @include more-slash('slash_black');
+}
+
+.title-line {
+  @include title-line($divider);
+}
+
+.more-slash {
+  @include more-slash('title-line');
+}
