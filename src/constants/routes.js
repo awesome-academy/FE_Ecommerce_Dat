@@ -8,3 +8,6 @@ export const PRODUCTS = '/admin/products';
 export const ORDERS = '/admin/orders';
 export const CATEGORIES = '/admin/categories';
 export const STATISTIC = '/admin/statistic';
+export const DETAIL = '/detail/:id';
+
+export const RETURNS = '/returns';

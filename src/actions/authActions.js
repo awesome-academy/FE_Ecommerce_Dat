@@ -35,7 +35,6 @@ export const logoutUser = () => dispatch => {
   auth.doSignOut().then(function () {
     dispatch(setCurrentUser({}));
   }).catch(function (error) {
-    console.log(error);
   });
 }
 

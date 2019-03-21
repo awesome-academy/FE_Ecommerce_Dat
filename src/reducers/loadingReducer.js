@@ -1,6 +1,8 @@
 import { LOGINING, REGISTERING, FETCHING_PRODUCTS } from './../constants/actionTypes';
 
-const initalState = {}
+const initalState = {
+  fetchingProducts: false
+}
 
 export default function (state = initalState, action) {
   switch (action.type) {

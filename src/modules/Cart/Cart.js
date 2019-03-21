@@ -1,33 +1,64 @@
+import _ from 'lodash';
 import React from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import './Cart.scss';
+import CartItem from '../../components/CartItem/CartItem';
+import isEmpty from './../../validation/is-empty';
 
 class Cart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showCart: false
+      showCart: false,
     }
   }
+
+  renderCart = () => {
+    if (!isEmpty(this.props.products)) {
+      return _.map(this.props.cart, (quantity, key) => {
+        let productInfo = this.props.products[key];
+        let { name, price_n, images } = productInfo;
+        let product = { id: key, quantity, name, price_n, image: images[0] };
+        return <CartItem
+          key={key}
+          product={product}
+          removeProduct={this.props.removeProduct}
+        />
+      })
+    }
+    return false;
+  }
+
+  calculatePrice = () => {
+    if (!isEmpty(this.props.products)) {
+      let total = 0;
+      _.map(this.props.cart, (quantity, key) => {
+        total += quantity * parseInt(this.props.products[key].price_n, 10);
+      });
+      return total;
+    }
+  }
+
   render() {
     return (
       <div className={cn("header-cart")}>
         <label><i className={cn("cart-icon")} onClick={() => this.setState({ showCart: !this.state.showCart })}></i></label>
         <div className={cn("header-cart-container", { 'show-cart': this.state.showCart })} id="cart">
-          <ul className={cn("header-cart--item")}>
-            <li>
-              <img className={cn("product-image")} src={require('../../assets/images/cart_thumb.jpg')} alt="Áo sơ mi nam" />
-              <div className={cn("name-price")}>
-                <h6 className={cn("product-name")}>Áo sơ mi nam</h6>
-                <p className={cn("product-price")}>120.000đ</p>
-              </div><Link to="#"><i className={cn("icon-remove")}></i></Link>
-            </li>
-          </ul>
-          <div className={cn("header-cart-total")}>
-            <span>Tổng số</span><span className={cn("total-price")}>240.000đ</span>
-          </div>
-          <Link className={cn("btn btn-buy btn--color-black")} to="/cart">Giỏ hàng</Link>
+          {
+            !isEmpty(this.props.cart) ?
+              <>
+                <ul className={cn("header-cart--item")}>
+                  {this.props.products ? this.renderCart() : null}
+                </ul>
+                <div className={cn("header-cart-total")}>
+                  <span>Tổng số</span><span className={cn("total-price")}>{this.calculatePrice()}đ</span>
+                </div>
+                <Link className={cn("btn btn-buy btn--color-black")} to="/cart">Giỏ hàng</Link>
+              </>
+              :
+              <p>Không có sản phẩm nào</p>
+          }
         </div>
       </div>
     )

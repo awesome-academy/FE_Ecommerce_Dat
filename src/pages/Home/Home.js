@@ -8,6 +8,7 @@ import Social from '../../modules/Social';
 import Products from '../../modules/Products';
 import Others from '../../modules/Others';
 import isEmpty from '../../validation/is-empty';
+import { toastr } from 'react-redux-toastr';
 
 class Home extends React.PureComponent {
 
@@ -22,6 +23,10 @@ class Home extends React.PureComponent {
     }
   }
 
+  addToCart = (id) => {
+    this.props.cartActions.addToCart({id, quantity: 1});
+    toastr.success('Thêm giỏ hàng thành công', '');
+  }
 
   render() {
     return (
@@ -33,6 +38,7 @@ class Home extends React.PureComponent {
         <Products
           products={this.props.products}
           fetchingProducts={this.props.loading.fetchingProducts}
+          addToCart={this.addToCart}
         />
         <Social />
         <Others />

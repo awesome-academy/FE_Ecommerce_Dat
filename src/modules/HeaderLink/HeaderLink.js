@@ -7,11 +7,16 @@ import './HeaderLink.scss';
 
 class HeaderLink extends React.Component {
   render() {
+    const { cart, products, cartActions } = this.props;
     return (
       <>
         <Menu />
         <HeaderUser />
-        <Cart />
+        <Cart
+          cart={cart}
+          products={products}
+          removeProduct={cartActions.removeProduct}
+        />
         <Search />
       </>
     )

@@ -8,6 +8,7 @@ import User from './pages/Admin/User';
 import Products from './pages/Admin/Products';
 import Categories from './pages/Admin/Categories';
 import Orders from './pages/Admin/Orders';
+import Detail from './containers/Detail';
 import NotFound from './pages/NotFound';
 import ReduxToastr from 'react-redux-toastr';
 
@@ -23,6 +24,7 @@ class App extends Component {
           <Route exact path={routes.PRODUCTS} component={Products} />
           <Route exact path={routes.CATEGORIES} component={Categories} />
           <Route exact path={routes.ORDERS} component={Orders} />
+          <Route exact path={routes.DETAIL} component={Detail} />
           <Route component={NotFound} />
         </Switch>
         <ReduxToastr
