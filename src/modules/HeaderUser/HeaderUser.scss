@@ -1,0 +1,61 @@
+@import '../../assets/styles/main.scss';
+.header-user {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &__name {
+        color: $dark;
+        cursor: pointer;
+        font-size: $fz-standard;
+        font-weight: bold;
+    }
+    &__box {
+        display: none;
+        ul {
+            border: 1px solid $divider;
+            background: $white;
+            width: auto;
+            min-width: 265px;
+            z-index: 15;
+            list-style: none;
+            margin: 0;
+            padding: 4px 12px;
+            border-radius: 0 0 3px 3px;
+            box-shadow: 0 6px 12px 0 rgba($dark, .6);
+            position: absolute;
+            top: 50px;
+            left: -80px;
+            .header-user__customer-link {
+                background: none;
+                border: 1px solid $divider;
+                border-radius: 5px;
+                .header-user__text {
+                    color: $darker;
+                }
+            }
+            li {
+                display: block;
+                position: relative;
+                width: 236px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                background: $primary;
+                border-radius: 4px;
+                margin: 10px 0;
+                .header-user__text {
+                    display: inline-block;
+                    vertical-align: top;
+                    color: $white;
+                    text-decoration: none;
+                    font-size: ($fz-small)+2;
+                    font-weight: 400;
+                    text-shadow: 0 0 1px $light;
+                }
+            }
+        }
+    }
+    &__box--active {
+        display: flex;
+    }
+}
