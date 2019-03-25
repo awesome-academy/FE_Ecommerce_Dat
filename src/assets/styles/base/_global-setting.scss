@@ -31,9 +31,11 @@
 
 .form .summary {
     margin-bottom: 30px;
+    margin-top: 20px;
     .title {
         font-size: ($fz-standard)+1;
         text-transform: uppercase;
+        font-weight: bold;
     }
 }
 

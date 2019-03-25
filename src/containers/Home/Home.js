@@ -4,6 +4,7 @@ import Home from './../../pages/Home'
 
 const mapStateToProps = (state) => {
   return {
+    auth: state.auth
   };
 };
 
