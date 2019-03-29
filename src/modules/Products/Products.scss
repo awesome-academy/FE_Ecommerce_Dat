@@ -1,0 +1,244 @@
+@import '../../assets/styles/main';
+
+.next-icon {
+  background: url('../../assets/images/next_icon.png') no-repeat;
+  width: 43px;
+  height: 31px;
+  display: block;
+  margin-left: 5px;
+}
+
+.previous-icon {
+  background: url('../../assets/images/previous_icon.png') no-repeat;
+  width: 43px;
+  height: 31px;
+  display: block;
+  margin-right: 5px;
+}
+
+.products {
+  background: url('../../assets/images/bg_product.jpg');
+  border-bottom: 1px solid $divider;
+  border-top: 1px solid $divider;
+}
+
+.products-container {
+  padding: 50px 0;
+}
+
+ul.product-tabs {
+  padding: 0 35px;
+  list-style: none;
+  @include breakpoint(tablets-up) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  li:not(:last-child) {
+      padding-bottom: 10px;
+      margin-right: 30px;
+  }
+  li {
+      font-family: $font-special-1;
+      a {
+          color: $grey;
+          font-size: ($fz-medium) + 2;
+          text-decoration: none;
+      }
+  }
+  .active {
+      color: $primary;
+      font-size: $fz-large;
+      font-weight: bold;
+  }
+}
+
+.product-menu {
+  padding: 20px 50px;
+}
+
+.product-menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  @include breakpoint(tablets-up) {
+      flex-wrap: nowrap;
+      justify-content: center;
+  }
+  li {
+      width: 50%;
+      list-style-position: inside;
+      @include breakpoint(tablets-up) {
+          list-style-type: square;
+          width: auto;
+          margin-right: 10px;
+          &:first-of-type {
+              list-style: none;
+          }
+      }
+      list-style-type: unset;
+      a {
+          color: $light;
+          text-decoration: none;
+          @include breakpoint(tablets-up) {
+              font-size: ($fz-standard)-1;
+          }
+      }
+      &:hover,
+      &:hover a {
+          color: $primary-light;
+      }
+  }
+}
+
+.product-list {
+  padding: 10px;
+  .previous-icon,
+  .next-icon {
+      display: none;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+  }
+  @include breakpoint(tablets-up) {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  @include breakpoint(laptops-desktops) {
+      justify-content: center;
+      .previous-icon,
+      .next-icon {
+          display: inline-block;
+      }
+  }
+}
+
+.products {
+  .product-item {
+      text-align: center;
+      @include breakpoint(laptops-desktops) {
+          @include grid(5, 1%);
+          height: 420px;
+      }
+      @include breakpoint(tablets-ipads-p) {
+          @include grid(2, 2%);
+          height: 500px;
+      }
+  }
+}
+.product-item {
+  padding: 20px 0;
+  margin-bottom: 10px;
+  background: $white;
+  &__img {
+      border-bottom: 1.5px dashed $divider;
+  }
+  &__branch {
+      margin-top: 20px;
+      color: $grey;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 10px 0;
+  }
+  a {
+      text-decoration: none;
+  }
+  &__name {
+      color: $dark;
+      font-weight: bold;
+      font-size: $fz-medium;
+      padding-bottom: 10px;
+  }
+  &__price {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: $fz-medium;
+      font-family: $font-special-1;
+      &--new {
+          color: $primary;
+          font-weight: bold;
+          margin-right: 5px;
+      }
+      &--new::after,
+      &--old::after {
+          content: attr(data-end);
+          vertical-align: super;
+          font-size: smaller;
+      }
+      &--old {
+          color: $grey;
+      }
+  }
+  .hr-name {
+      margin: 0 auto;
+      width: 15%;
+      border-top: 1.2px solid $light;
+  }
+  &__action {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+      @include breakpoint(tablets-up) {
+          display: none;
+      }
+      &--buy {
+          padding: 10px 10px;
+          border: 3px solid $light;
+          border-radius: 10px;
+          cursor: pointer;
+          text-transform: uppercase;
+          color: $black;
+          font-size: ($fz-small) +1;
+          font-weight: bold;
+          &:hover {
+              border-color: darken($light, 40);
+          }
+      }
+      @mixin size-icon {
+          height: 45px;
+          width: 45px;
+      }
+      &--heart {
+          background: $primary;
+          border-radius: 30%;
+          @include size-icon;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 10px;
+          cursor: pointer;
+          &:hover {
+              background: lighten($color: $primary, $amount: 20);
+          }
+      }
+      &--reload {
+          background: $light;
+          border: 3px solid $light;
+          border-radius: 30%;
+          @include size-icon;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          &:hover {
+              border-color: darken($light, 40);
+          }
+      }
+  }
+  &:hover>&__action {
+      display: flex;
+  }
+}
+
+@mixin size-icon {
+  height: 12px;
+  width: 12px;
+}
+.heart-icon {
+  background: url('../../assets/images/heart_icon.png') no-repeat;
+  @include size-icon;
+}
+
+.reload-icon {
+  background: url('../../assets/images/reload_icon.png') no-repeat;
+  @include size-icon;
+}
