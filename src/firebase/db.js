@@ -31,3 +31,16 @@ export const deleteUser = (id) =>
   db.ref(`users/${id}`).update({
     status: false
   })
+
+// Category
+export const getAllCategories = () =>
+  db.ref(`categories`).once('value')
+
+export const createCategory = (data) =>
+  db.ref(`categories`).push(data)
+
+export const updateCategory = (data) =>
+  db.ref(`categories/${data.id}`).set({ name: data.name })
+
+export const deleteCategory = (id) =>
+  db.ref(`categories/${id}`).set({})

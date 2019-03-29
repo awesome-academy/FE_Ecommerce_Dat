@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
 import cn from 'classnames';
-import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import DetailModal from './User/Detail';
 import ConfirmModal from '../../modal/Confirm';
@@ -82,7 +81,6 @@ class Users extends React.Component {
   onSave = () => {
     if (!this.state.data.id) {
       // Create new account
-      // this.props.categoriesActions.create({ ...this.state.details, ActiveStatus: this.state.details.ActiveStatus ? this.state.details.ActiveStatus : constants.ActiveStatus[0].value });
     } else {
       const data = { ...this.state.data };
       this.props.userActions.updateUser({ ...data });
