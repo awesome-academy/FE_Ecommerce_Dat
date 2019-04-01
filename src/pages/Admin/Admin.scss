@@ -1,0 +1,110 @@
+@import '../../assets/styles/main';
+
+.management {
+    padding: 20px 0px;
+
+    &__head {
+        background: $white;
+        border-right: 1px solid $divider;
+    }
+
+    &__welcome {
+        font-size: $fz-small;
+        color: $darker;
+        text-align: center;
+        padding: 20px 0;
+        p {
+            font-size: $fz-medium;
+            font-weight: bold;
+        }
+    }
+
+    &__content {
+        ul.list {
+            list-style: none;
+
+            li {
+                margin: 10px 0;
+                padding: 10px 15px;
+                background: $primary;
+
+                a {
+                    font-size: ($fz-small);
+                    text-transform: uppercase;
+                    color: $white;
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    background: lighten($primary, 10);
+                }
+            }
+        }
+    }
+
+    &__container {
+      .management-box {
+        .sub-title {
+          font-size: $fz-medium;
+          font-weight: bold;
+          text-transform: uppercase;
+          padding: 20px 0;
+        }
+      }
+    }
+}
+
+table.table-responsive {
+    width: 100%;
+    color: $darker;
+    display: table;
+
+    thead {
+        tr {
+            display: table-row;
+
+            th {
+                min-width: 100px;
+                position: relative;
+                background: 0 0;
+                color: $dark;
+                font-size: ($fz-small)+2;
+                font-weight: 400;
+                border-bottom: 1px $divider solid;
+                display: table-cell;
+                padding: 20px 15px;
+                border-top: none;
+            }
+        }
+    }
+
+    tbody {
+        display: table-row-group;
+        tr {
+            display: table-row;
+            border-bottom: 1px #f4f4f4 solid;
+            td {
+              border: none;
+              position: relative;
+              display: table-cell;
+              padding: 20px 15px;
+              color: $darker;
+              vertical-align: top;
+              min-width: 100px;
+          }
+        }
+    }
+
+    tr {
+        padding: 20px;
+    }
+}
+
+.btn-delete {
+  border: 1px dashed $red;
+}
+
+.btn-edit {
+  border: 1px dashed $primary;
+}

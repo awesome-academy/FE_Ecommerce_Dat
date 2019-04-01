@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import cn from 'classnames';
 import './HeaderUser.scss';
-import isEmpty from '../../validation/is-empty';
 import { logoutUser } from './../../actions/authActions';
+import * as routes from '../../constants/routes';
+
 
 class HeaderUser extends React.Component {
   constructor(props) {
@@ -27,6 +28,9 @@ class HeaderUser extends React.Component {
         </li>
         <li className={cn('header-user__customer-link')}>
           <Link to='/individual/products'><span className={cn('header-user__text')}>Sản phẩm đã xem</span></Link>
+        </li>
+        <li className={cn('header-user__customer-link')}>
+          <Link to={routes.USERS}><span className={cn('header-user__text')}>Admin</span></Link>
         </li>
         <li className={cn('header-user__customer-link')}>
           <div className={cn('btn')} onClick={() => { this.handleLogoutUser() }}><span className={cn('header-user__text')}>Thoát</span></div>

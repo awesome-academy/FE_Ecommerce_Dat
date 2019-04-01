@@ -1,0 +1,33 @@
+@import '../../assets/styles/main.scss';
+
+.body {
+  padding: 20px 20px 0px 20px;
+}
+.titleColEdit
+{
+  font-size: $fz-standard;
+}
+.action {
+  padding-left: 5px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .btn-close {
+    background-color: $dark;
+    padding: 10px 20px;
+    margin: 0px;
+    border: 0px;
+    text-transform: uppercase;
+    font-size: ($fz-small)+2;
+  }
+  .btn-delete {
+    background-color: $primary;
+    padding: 10px 20px;
+    margin: 0px;
+    border: 0px;
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-size: ($fz-small)+2;
+  }
+}

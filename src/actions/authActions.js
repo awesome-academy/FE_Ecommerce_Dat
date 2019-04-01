@@ -7,7 +7,6 @@ export const loginUser = (email, password) => dispatch => {
     payload: true
   });
   auth.doSignInWithEmailAndPassword(email, password).then(user => {
-    dispatch(setCurrentUser(user));
     dispatch({
       type: LOGINING,
       payload: false
@@ -42,7 +41,7 @@ export const logoutUser = () => dispatch => {
 }
 
 // Create user
-export const createUserWithEmailAndPassword = (email, password, name, phone) => dispatch => {
+export const createUserWithEmailAndPassword = (email, password, name, phone, status) => dispatch => {
   dispatch({
     type: GET_ERRORS,
     payload: ''
@@ -55,7 +54,7 @@ export const createUserWithEmailAndPassword = (email, password, name, phone) => 
     authData.user.updateProfile({
       displayName: name
     }).then(() => {
-      db.doCreateUser(authData.user.uid, name, email, phone);
+      db.doCreateUser(authData.user.uid, name, email, phone, status);
       dispatch(setCurrentUser(authData));
       dispatch({
         type: REGISTERING,

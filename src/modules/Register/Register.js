@@ -11,6 +11,7 @@ class Register extends React.Component {
       email: '',
       password: '',
       password2: '',
+      status: true,
       phone: '',
       errors: ''
     };
@@ -62,12 +63,12 @@ class Register extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { name, email, password, phone } = this.state;
+    const { name, email, password, phone, roles, status } = this.state;
     if (!this.isValid()) {
       return;
     }
-    console.log(email, password, name, phone);
-    this.props.createUserWithEmailAndPassword(email, password, name, phone);
+
+    this.props.createUserWithEmailAndPassword(email, password, name, phone, status);
   }
 
   render() {
@@ -95,7 +96,7 @@ class Register extends React.Component {
               <InputField
                 label="Điện thoại *"
                 type="text"
-                name="name"
+                name="phone"
                 value={this.state.phone}
                 onChange={this.onChange}
               />
