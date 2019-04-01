@@ -1,0 +1,105 @@
+@import '../../assets/styles/main';
+
+.product-item {
+  padding: 20px 0;
+  margin-bottom: 10px;
+  background: $white;
+  &__img {
+      border-bottom: 1.5px dashed $divider;
+  }
+  &__branch {
+      margin-top: 20px;
+      color: $grey;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 10px 0;
+  }
+  a {
+      text-decoration: none;
+  }
+  &__name {
+      color: $dark;
+      font-weight: bold;
+      font-size: $fz-medium;
+      padding-bottom: 10px;
+  }
+  &__price {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: $fz-medium;
+      font-family: $font-special-1;
+      &--new {
+          color: $primary;
+          font-weight: bold;
+          margin-right: 5px;
+      }
+      &--new::after,
+      &--old::after {
+          content: attr(data-end);
+          vertical-align: super;
+          font-size: smaller;
+      }
+      &--old {
+          color: $grey;
+      }
+  }
+  .hr-name {
+      margin: 0 auto;
+      width: 15%;
+      border-top: 1.2px solid $light;
+  }
+  &__action {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+      @include breakpoint(tablets-up) {
+          display: none;
+      }
+      &--buy {
+          padding: 10px 10px;
+          border: 3px solid $light;
+          border-radius: 10px;
+          cursor: pointer;
+          text-transform: uppercase;
+          color: $black;
+          font-size: ($fz-small) +1;
+          font-weight: bold;
+          &:hover {
+              border-color: darken($light, 40);
+          }
+      }
+      @mixin size-icon {
+          height: 45px;
+          width: 45px;
+      }
+      &--heart {
+          background: $primary;
+          border-radius: 30%;
+          @include size-icon;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 10px;
+          cursor: pointer;
+          &:hover {
+              background: lighten($color: $primary, $amount: 20);
+          }
+      }
+      &--reload {
+          background: $light;
+          border: 3px solid $light;
+          border-radius: 30%;
+          @include size-icon;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          &:hover {
+              border-color: darken($light, 40);
+          }
+      }
+  }
+  &:hover>&__action {
+      display: flex;
+  }
+}
