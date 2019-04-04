@@ -44,3 +44,28 @@ export const updateCategory = (data) =>
 
 export const deleteCategory = (id) =>
   db.ref(`categories/${id}`).set({})
+
+// Products
+export const fetchAllProducts = () =>
+  db.ref(`products`).once('value')
+
+export const createProduct = (data) =>
+  db.ref(`products`).push(data)
+
+export const updateProduct = ({data}) =>
+  db.ref(`products/${data.id}`).set({
+    category: data.category,
+    name: data.name,
+    images: data.images,
+    color: data.color,
+    features: data.features,
+    information: data.information,
+    price_n: data.price_n,
+    price_o: data.price_o,
+    quantity: data.quantity,
+  })
+
+export const deleteProduct = (id) =>
+  db.ref(`products/${id}`).update({
+    status: false
+  })

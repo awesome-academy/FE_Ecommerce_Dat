@@ -9,7 +9,7 @@ class Navigator extends React.Component {
       <div className={cn('col-md-3 management__head')}>
         <div className={cn('management__welcome')}>
           Tài khoản của
-          <p>Nguyen Van Tèo</p>
+          <p>{this.props.auth.user.name}</p>
         </div>
         <div className={cn('management__content')}>
           <ul className={cn('list')}>

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import * as ROUTES from '../constants/routes';
 import { onAuthUserListener } from '../firebase/auth';
+import isEmpty from '../validation/is-empty';
 
 const withAuthorization = condition => Component => {
   class WithAuthorization extends React.Component {

@@ -13,6 +13,7 @@
         color: $darker;
         text-align: center;
         padding: 20px 0;
+
         p {
             font-size: $fz-medium;
             font-weight: bold;
@@ -25,14 +26,15 @@
 
             li {
                 margin: 10px 0;
-                padding: 10px 15px;
                 background: $primary;
 
                 a {
+                    padding: 10px 15px;
                     font-size: ($fz-small);
                     text-transform: uppercase;
                     color: $white;
                     text-decoration: none;
+                    display: block;
                 }
 
                 &:hover {
@@ -44,14 +46,14 @@
     }
 
     &__container {
-      .management-box {
-        .sub-title {
-          font-size: $fz-medium;
-          font-weight: bold;
-          text-transform: uppercase;
-          padding: 20px 0;
+        .management-box {
+            .sub-title {
+                font-size: $fz-medium;
+                font-weight: bold;
+                text-transform: uppercase;
+                padding: 20px 0;
+            }
         }
-      }
     }
 }
 
@@ -81,30 +83,36 @@ table.table-responsive {
 
     tbody {
         display: table-row-group;
+
         tr {
             display: table-row;
             border-bottom: 1px #f4f4f4 solid;
+
             td {
-              border: none;
-              position: relative;
-              display: table-cell;
-              padding: 20px 15px;
-              color: $darker;
-              vertical-align: top;
-              min-width: 100px;
-          }
+                border: none;
+                position: relative;
+                display: table-cell;
+                padding: 20px 15px;
+                color: $darker;
+                vertical-align: top;
+                min-width: 100px;
+            }
         }
     }
 
     tr {
         padding: 20px;
     }
-}
 
-.btn-delete {
-  border: 1px dashed $red;
-}
+    .btn {
+        margin: 2px;
+    }
 
-.btn-edit {
-  border: 1px dashed $primary;
+    .btn-delete {
+        border: 1px dashed $red;
+    }
+
+    .btn-edit {
+        border: 1px dashed $primary;
+    }
 }

@@ -4,6 +4,8 @@ import errorReducer from './errorReducer';
 import loadingReducer from './loadingReducer';
 import userReducer from './userReducer';
 import categoryReducer from './categoryReducer';
+import productReducer from './productReducer';
+import { reducer as toastrReducer } from 'react-redux-toastr';
 
 const rootReducers = combineReducers({
   auth: authReducer,
@@ -11,5 +13,7 @@ const rootReducers = combineReducers({
   loading: loadingReducer,
   users: userReducer,
   categories: categoryReducer,
+  products: productReducer,
+  toastr: toastrReducer,
 })
 export default rootReducers;

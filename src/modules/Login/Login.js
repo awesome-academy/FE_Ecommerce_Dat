@@ -19,7 +19,6 @@ class Login extends React.Component {
 
   componentDidMount() {
     if (this.props.auth && this.props.auth.isAuthenticated) {
-      console.log('cmd this.props.auth: ', this.props.auth);
       this.props.history.push('/')
     }
   }

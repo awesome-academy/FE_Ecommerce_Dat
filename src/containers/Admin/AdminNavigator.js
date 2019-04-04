@@ -4,6 +4,7 @@ import AdminNavigatorView from '../../modules/Admin/Navigator';
 
 const mapStateToProps = (state) => {
   return {
+    auth: state.auth
   };
 };
 
@@ -12,4 +13,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default AdminNavigatorView;
+export default connect(mapStateToProps, mapDispatchToProps)(AdminNavigatorView);

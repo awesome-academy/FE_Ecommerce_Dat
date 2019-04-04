@@ -21,13 +21,11 @@ class Register extends React.Component {
   }
   componentDidMount() {
     if (this.props.auth && this.props.auth.isAuthenticated) {
-      console.log(this.props.auth)
       this.props.history.push('/')
     }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('nextProps.errors: ', nextProps.errors);
     if (nextProps.errors && nextState.errors !== nextProps.errors) {
       this.setState({ errors: nextProps.errors })
     }

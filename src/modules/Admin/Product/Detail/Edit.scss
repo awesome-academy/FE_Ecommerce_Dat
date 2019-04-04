@@ -1,0 +1,86 @@
+@import '../../../../assets/styles/main';
+
+.modal {
+    &__title {
+        font-size: $fz-medium;
+        padding: 10px 0;
+        color: $darker;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .modal-control {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .action {
+        position: relative;
+        float: right;
+        padding-right: 5%;
+        color: $white;
+        display: flex;
+
+        .btn-cancel {
+            background-color: $dark;
+            padding: 10px 20px;
+            margin: 0px;
+            border: 0px;
+            text-transform: uppercase;
+            margin-right: 15px;
+            font-size: ($fz-small)+2;
+        }
+
+        .btn-save {
+            background-color: $primary;
+            padding: 10px 20px;
+            margin: 0px;
+            border: 0px;
+            text-transform: uppercase;
+            font-size: ($fz-small)+2;
+        }
+    }
+
+    .error {
+        position: relative;
+        width: 100%;
+        margin-bottom: 10px;
+
+        &__text {
+            text-align: left;
+            padding: 5px 0px 10px 20px;
+            float: left;
+            font-size: ($fz-small);
+        }
+    }
+
+    .images-editing {
+        display: flex;
+        border: 1px dashed $divider;
+        padding: 10px;
+        margin-top: 10px;
+
+        .btn-upload {
+            position: relative;
+            float: left;
+            width: 55px;
+            height: 55px;
+        }
+
+        .image-item {
+            position: relative;
+            width: 100px;
+            margin: 4px;
+
+            .btn-remove {
+                position: absolute;
+                right: 0;
+                top: 0;
+                margin-right: 5px;
+                margin-top: 5px;
+                cursor: pointer;
+            }
+        }
+
+    }
+}

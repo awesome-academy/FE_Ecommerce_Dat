@@ -34,7 +34,6 @@ export const setCurrentUser = decoded => {
 export const logoutUser = () => dispatch => {
   auth.doSignOut().then(function () {
     dispatch(setCurrentUser({}));
-    console.log('dang xuat thanh cong');
   }).catch(function (error) {
     console.log(error);
   });

@@ -1,11 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { compose } from 'recompose';
 import cn from 'classnames';
 import './Admin.scss';
 import Header from '../../modules/Header/Navbar';
 import Footer from '../../containers/Footer';
 import AdminNavigator from '../../containers/Admin/AdminNavigator';
+import { withAuthorization } from '../../session';
 import OrdersContainer from '../../containers/Admin/Orders';
+import * as ROLES from '../../constants/role';
+import isEmpty from '../../validation/is-empty';
 
 class Orders extends React.Component {
   render() {
@@ -25,4 +28,5 @@ class Orders extends React.Component {
   }
 }
 
-export default Orders;
+const condition = authUser => !isEmpty(authUser) && authUser.roles.includes(ROLES.ADMIN);
+export default compose(withAuthorization(condition))(Orders);
