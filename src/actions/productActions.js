@@ -1,27 +1,32 @@
 import _ from 'lodash';
 import { db } from '../firebase';
-import { FETCH_PRODUCTS, CREATE_PRODUCT, UPDATE_PRODUCT, DELETE_PRODUCT } from '../constants/ActionTypes';
+import { FETCH_PRODUCTS, CREATE_PRODUCT, UPDATE_PRODUCT, DELETE_PRODUCT, FETCHING_PRODUCTS } from '../constants/ActionTypes';
 
 export const fetchAllProducts = () => dispatch => {
+  dispatch({
+    type: FETCHING_PRODUCTS,
+    payload: true
+  })
   db.fetchAllProducts().then(snapshot => {
     dispatch({
       type: FETCH_PRODUCTS,
       payload: snapshot.val()
-    })
+    });
+    dispatch({
+      type: FETCHING_PRODUCTS,
+      payload: false
+    });
   }, (error) => {
-    console.log(error)
   })
 }
 
 export const createProduct = (data) => dispatch => {
-  console.log(data);
   db.createProduct(data).then(snapshot => {
     dispatch({
       type: CREATE_PRODUCT,
       payload: {...data, id: snapshot.key}
     })
   }, (error) => {
-    console.error(error);
   })
 }
 
@@ -32,7 +37,6 @@ export const updateProduct = (data) => dispatch => {
       payload: data
     })
   }, (error) => {
-    console.error(error);
   })
 }
 
@@ -43,6 +47,5 @@ export const deleteProduct = (id) => dispatch => {
       payload: id
     })
   }, (error) => {
-    console.error(error);
   })
 }

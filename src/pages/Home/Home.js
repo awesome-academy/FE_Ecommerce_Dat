@@ -7,6 +7,7 @@ import Feedback from '../../modules/Feedback/Feedback';
 import Social from '../../modules/Social';
 import Products from '../../modules/Products';
 import Others from '../../modules/Others';
+import isEmpty from '../../validation/is-empty';
 
 class Home extends React.PureComponent {
 
@@ -15,6 +16,13 @@ class Home extends React.PureComponent {
     this.state = {};
   }
 
+  componentDidMount() {
+    if (isEmpty(this.props.products)) {
+      this.props.productActions.fetchAllProducts();
+    }
+  }
+
+
   render() {
     return (
       <>
@@ -22,7 +30,10 @@ class Home extends React.PureComponent {
         <Promotion />
         <Feature />
         <Feedback />
-        <Products />
+        <Products
+          products={this.props.products}
+          fetchingProducts={this.props.loading.fetchingProducts}
+        />
         <Social />
         <Others />
         <Footer />

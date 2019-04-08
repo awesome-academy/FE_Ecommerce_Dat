@@ -1,13 +1,15 @@
-import * as types from './../constants/actionTypes';
+import { LOGINING, REGISTERING, FETCHING_PRODUCTS } from './../constants/actionTypes';
 
 const initalState = {}
 
 export default function (state = initalState, action) {
   switch (action.type) {
-    case types.LOGINING:
+    case LOGINING:
       return { ...state, logining: action.payload }
-    case types.REGISTERING:
+    case REGISTERING:
       return { ...state, registering: action.payload }
+    case FETCHING_PRODUCTS:
+      return { ...state, fetchingProducts: action.payload }
     default:
       return state;
   }

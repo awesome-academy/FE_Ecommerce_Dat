@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 const FeatureItemSmall = (props) => {
   return (
-    <div className={cn(`feature__item--small ${props.class}`)}>
+    <div className={cn(`feature__item--small ${props.className}`)}>
       {props.children}
     </div>
   )
