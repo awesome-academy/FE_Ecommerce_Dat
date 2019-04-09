@@ -1,25 +1,19 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import Home from './../../pages/Home'
+import HeaderLink from '../../modules/HeaderLink';
 import Actions from '../../actions';
 import { bindActionCreators } from 'redux';
 
 const mapStateToProps = (state) => {
   return {
-    auth: state.auth,
-    products: state.products,
-    loading: state.loading
+    cart: state.cart,
+    products: state.products
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    productActions: bindActionCreators(Actions.productActions, dispatch),
     cartActions: bindActionCreators(Actions.cartActions, dispatch)
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderLink);

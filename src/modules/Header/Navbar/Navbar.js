@@ -1,7 +1,7 @@
 import React from 'react';
 import './Navbar.scss';
 import Logo from '../../Logo';
-import HeaderLink from '../../HeaderLink';
+import HeaderLink from '../../../containers/HeaderLink';
 import cn from 'classnames';
 
 class Navbar extends React.Component {

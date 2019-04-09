@@ -7,7 +7,6 @@ export default function (state = initalState, action) {
     case FETCH_PRODUCTS:
       return action.payload;
     case CREATE_PRODUCT:
-      console.log('create: ', action.payload)
       return { ...state, [action.payload.id]: action.payload };
     case UPDATE_PRODUCT:
       products = { ...state };

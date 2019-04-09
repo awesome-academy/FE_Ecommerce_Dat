@@ -6,6 +6,9 @@ import ProductItem from "../../components/ProductItem";
 import ProductLoading from '../../components/ContentLoading/ProductLoading';
 
 class Products extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   contentLoadingFake = () => {
     let i;
@@ -18,7 +21,12 @@ class Products extends React.Component {
 
   renderProducts = () => {
     return _.map(this.props.products, (product, key) => {
-      return product.status && <ProductItem key={key} product={product} id={key} />
+      return product.status && <ProductItem
+        key={key}
+        product={product}
+        id={key}
+        addToCart={this.props.addToCart}
+      />
     })
   }
   render() {

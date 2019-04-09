@@ -3,18 +3,18 @@ import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import './ProductItem.scss';
 
-const ProductItem = ({product, id}) => {
+const ProductItem = ({ product, id, addToCart  }) => {
   return (
     <div className={cn("product-item")}>
       <div className={cn("product-item-img")}><img src={product.images[0]} /></div>
       <div className={cn("product-item__branch")}>{product.branch}</div>
-      <Link className={cn("product-item__name")} to={`/detail/${id}`}>{product.name.substring(0, 20)}...</Link>
+      <Link className={cn("product-item__name")} title={product.name} to={`/detail/${id}`}>{product.name.substring(0, 20)}...</Link>
       <hr className={cn("hr-name")} />
       <div className={cn("product-item__price")}>
         <span className={cn("product-item__price--new")} data-end="đ">{product.price_n}</span>
         <span className={cn("product-item__price--old")} data-end="đ">{product.price_o}</span></div>
       <div className={cn("product-item__action")}>
-        <Link className={cn("product-item__action--buy")} to={`detail/${product.id}`}>Mua hàng</Link>
+        <div className={cn("product-item__action--buy")} onClick={() => addToCart(id)}>Mua hàng</div>
         <div className={cn("product-item__action--heart")}>
           <i className={cn("heart-icon")}></i>
         </div>
@@ -22,7 +22,7 @@ const ProductItem = ({product, id}) => {
           <i className={cn("reload-icon")}></i>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 

@@ -7,6 +7,16 @@ import store from './store';
 import { auth } from './firebase/firebase';
 import { setCurrentUser } from './actions/authActions';
 import { db } from './firebase';
+import DatabaseModule from './lib/db';
+import { GET_CART } from './constants/actionTypes';
+
+let cart = DatabaseModule.get("cart");
+if (cart) {
+  store.dispatch({
+    type: GET_CART,
+    payload: cart
+  })
+}
 
 auth.onAuthStateChanged(authUser => {
   if (authUser) {
