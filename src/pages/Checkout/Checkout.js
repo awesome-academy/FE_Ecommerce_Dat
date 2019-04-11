@@ -96,7 +96,7 @@ class Checkout extends React.Component {
         products: this.props.cart,
         uid: auth.currentUser.uid,
         status: false,
-        date: new Date()
+        date: Date.now()
       }
       this.props.orderActions.createAnOrder(data);
     }
