@@ -1,5 +1,5 @@
 import { db } from './firebase';
-
+import { auth } from './firebase';
 // User API
 
 export const doCreateUser = (id, name, email, phone, status) =>
@@ -52,7 +52,7 @@ export const fetchAllProducts = () =>
 export const createProduct = (data) =>
   db.ref(`products`).push(data)
 
-export const updateProduct = ({data}) =>
+export const updateProduct = ({ data }) =>
   db.ref(`products/${data.id}`).set({
     category: data.category,
     name: data.name,
@@ -69,3 +69,17 @@ export const deleteProduct = (id) =>
   db.ref(`products/${id}`).update({
     status: false
   })
+
+// Cart
+export const saveToCart = (uid, cart) =>
+  db.ref(`cart/${uid}`).set(cart)
+
+export const updateToCart = (uid, id, quantity) =>
+  db.ref(`cart/${uid}/${id}`).set(quantity);
+
+export const getCart = (uid) =>
+  db.ref(`cart/${uid}`).once('value')
+
+// Order
+export const createOrder = (data) =>
+  db.ref(`orders`).push(data)

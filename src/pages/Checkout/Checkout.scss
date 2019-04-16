@@ -1,0 +1,91 @@
+@import '../../assets/styles/main.scss';
+
+.checkout {
+  padding: 10px 0;
+  .container-title {
+      font-size: $fz-medium;
+      color: $darker;
+      text-transform: uppercase;
+      font-weight: bold;
+  }
+  .container-content {}
+}
+
+.payment {
+  .step-title {
+      margin-top: 0;
+      font-size: $fz-medium;
+      color: $dark;
+      text-transform: none;
+      margin-bottom: .75rem;
+  }
+  .form-group label {
+      text-transform: none;
+      font-weight: normal;
+      font-size: ($fz-small)+2;
+  }
+  .panel-body {}
+  .panel-cart {
+      .information {
+          padding: 10px 0;
+          font-size: ($fz-small)+2;
+      }
+      .order {
+          border-bottom: 1px solid $divider;
+          padding-bottom: 10px;
+          .title {
+              font-size: ($fz-small)+2;
+              text-transform: none;
+          }
+          a {
+              font-size: $fz-small;
+              text-transform: none;
+              color: $light;
+          }
+      }
+      .product {
+          margin-bottom: 10px;
+          .item {
+              display: flex;
+              justify-content: space-between;
+              font-size: $fz-small;
+              padding: 10px 0;
+              border-bottom: 1px dashed $divider;
+              .title {
+                  strong {
+                      margin-right: 5px;
+                  }
+              }
+              .price {
+                  &:after {
+                      content: attr(data-end);
+                      vertical-align: super;
+                      font-size: smaller;
+                  }
+              }
+          }
+      }
+      .total {
+          display: flex;
+          justify-content: space-between;
+          span {
+              font-size: ($fz-small)+2;
+          }
+          .numb {
+              font-size: $fz-medium;
+              font-weight: bold;
+              &:after {
+                  @include data-end;
+              }
+          }
+      }
+  }
+  .btn-order {
+      border-radius: 20px;
+      background: $primary;
+      padding: 10px 15px;
+      font-size: $fz-medium;
+      color: $white;
+      font-weight: normal;
+  }
+}

@@ -14,7 +14,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    productActions: bindActionCreators(Actions.productActions, dispatch)
+    productActions: bindActionCreators(Actions.productActions, dispatch),
+    cartActions: bindActionCreators(Actions.cartActions, dispatch)
   };
 };
 

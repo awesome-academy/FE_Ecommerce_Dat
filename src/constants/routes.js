@@ -9,5 +9,7 @@ export const ORDERS = '/admin/orders';
 export const CATEGORIES = '/admin/categories';
 export const STATISTIC = '/admin/statistic';
 export const DETAIL = '/detail/:id';
+export const CART = '/cart';
 
 export const RETURNS = '/returns';
+export const CHECKOUT = '/checkout';

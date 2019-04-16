@@ -1,0 +1,9 @@
+@import '../../../assets/styles/main.scss';
+
+ul.tabs-name {
+  border-bottom: 1px dashed $border-grey;
+  padding-bottom: 3px;
+  li {
+    cursor: pointer;
+  }
+}

@@ -9,7 +9,6 @@ export const getAllCategories = () => dispatch => {
       payload: snapshot.val()
     })
   }, (error) => {
-    console.log(error)
   })
 }
 
