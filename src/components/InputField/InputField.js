@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import './InputField.scss';
 
-const InputField = ({ name, label, type, id, value, placeholder, onChange, style, error, }) => {
+const InputField = ({ name, label, type, id, value, placeholder, onChange, style, error, disabled}) => {
   return (
     <div className={cn("form-group", { 'is-invalid': error })}>
       {label && <label>{label}</label>}
@@ -15,6 +15,7 @@ const InputField = ({ name, label, type, id, value, placeholder, onChange, style
         onChange={onChange}
         placeholder={placeholder}
         style={style}
+        disabled={disabled}
       />
       {error && <div className="invalid-feedback">{error}</div>}
     </div>

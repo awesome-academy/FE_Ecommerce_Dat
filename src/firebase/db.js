@@ -83,3 +83,10 @@ export const getCart = (uid) =>
 // Order
 export const createOrder = (data) =>
   db.ref(`orders`).push(data)
+
+// Orders Admin
+export const getAllOrders = () =>
+  db.ref(`orders`).once('value')
+
+export const updateOrderStatus = (oid, status) =>
+  db.ref(`orders/${oid}`).update({ status })
